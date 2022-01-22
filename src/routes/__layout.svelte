@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>felt-template</title>
+	<title>@feltcoop/svelte-mutable-store</title>
 	<link rel="icon" href="{base}/favicon.png" />
 </svelte:head>
 
