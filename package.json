@@ -3,6 +3,8 @@
   "description": "Svelte stores for mutable values with the immutable compiler option",
   "version": "0.1.0",
   "license": "Unlicense",
+  "homepage": "https://github.com/feltcoop/svelte-mutable-store",
+  "repository": "github:feltcoop/svelte-mutable-store",
   "author": {
     "name": "Felt.coop",
     "email": "team@felt.social",
