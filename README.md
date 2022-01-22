@@ -23,12 +23,15 @@ npm i @feltcoop/svelte-mutable-store
 Enable `immutable` either [globally](/svelte.config.js) or per-component;
 otherwise mutable values work fine in `writable stores:
 
-> TODO REPL link
+> view this example in
+> [a REPL on svelte.dev](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe?version=3.46.2)
 
 ```svelte
 <svelte:options immutable />
 
 <script>
+	// learn more: https://github.com/feltcoop/svelte-mutable-store
+
 	import {mutable, safeMutable} from '@feltcoop/svelte-mutable-store';
 	import {writable} from 'svelte/store';
 
@@ -48,11 +51,21 @@ otherwise mutable values work fine in `writable stores:
 		$c.set(someObj, $c.get(someObj) + 1);
 		$c = $c;
 	};
+	const reset = () => {
+		a.swap(new WeakMap(data));
+		b.swap(new WeakMap(data));
+		c.set(new WeakMap(data));
+	};
 </script>
 
 mutable (count: {$a.value.get(someObj)}) and safeMutable (count: {$b.value.get(someObj)}) both react
 to changes even though their values are mutated and the immutable option is enabled, but the
-writable does not (count: {$c.get(someObj)})
+writable does not unless you disable the immutable option at the top of the page (count: {$c.get(
+	someObj,
+)})
+
+<button on:click={increment}>increment</button>
+<button on:click={reset}>reset</button>
 ```
 
 ## api
