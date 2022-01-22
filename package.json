@@ -1,7 +1,7 @@
 {
   "name": "@feltcoop/svelte-mutable-store",
   "description": "Svelte stores for mutable values with the immutable compiler option",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "Unlicense",
   "author": {
     "name": "Felt.coop",
