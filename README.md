@@ -21,7 +21,7 @@ npm i @feltcoop/svelte-mutable-store
 ```
 
 Enable `immutable` either [globally](/svelte.config.js) or per-component;
-otherwise mutable values work fine in `writable stores:
+otherwise mutable values work fine in `writable` stores:
 
 > view this example in
 > [a REPL on svelte.dev](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe?version=3.46.2)
@@ -30,8 +30,6 @@ otherwise mutable values work fine in `writable stores:
 <svelte:options immutable />
 
 <script>
-	// learn more: https://github.com/feltcoop/svelte-mutable-store
-
 	import {mutable, safeMutable} from '@feltcoop/svelte-mutable-store';
 	import {writable} from 'svelte/store';
 
