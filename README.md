@@ -39,7 +39,7 @@ otherwise mutable values work fine in `writable stores:
 	const data = [[someObj, 1]];
 	// `mutable` is the more efficient option; swaps between 2 stable objects refs
 	const a = mutable(new WeakMap(data));
-	// `safeMutable` is slightly less efficient; generates a new reference on every mutation
+	// `safeMutable` is slightly less efficient; creates a new object ref every mutation
 	const b = safeMutable(new WeakMap(data));
 	// `writable` doesn't work in this case with `immutable` enabled
 	const c = writable(new WeakMap(data));
@@ -61,11 +61,14 @@ otherwise mutable values work fine in `writable stores:
 	};
 </script>
 
-mutable (count: {$a.value.get(someObj)}) and safeMutable (count: {$b.value.get(someObj)}) both react
-to changes even though their values are mutated and the immutable option is enabled, but the
-writable does not unless you disable the immutable option at the top of the page (count: {$c.get(
-	someObj,
-)})
+<pre>
+	mutable (count: {$a.value.get(someObj)})
+	and safeMutable (count: {$b.value.get(someObj)})
+	both react to changes even though their values are mutated
+	and the immutable option is enabled,
+	but the writable does not unless you disable the immutable option
+	at the top of the page (count: {$c.get(someObj)})
+</pre>
 
 <button on:click={increment}>increment</button>
 <button on:click={reset}>reset</button>
