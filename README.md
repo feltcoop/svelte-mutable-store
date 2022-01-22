@@ -154,6 +154,6 @@ gro publish patch|minor|major|etc
 
 public domain ⚘ [The Unlicense](license)
 
-Feel free to copypaste and modify this code wherever you wish,
-there's no need to drag a license file around with you.
+Feel free to copypaste and modify this code wherever you wish;
+there's no need to drag a license file around with it.
 Attribution is appreciated but you do you.
