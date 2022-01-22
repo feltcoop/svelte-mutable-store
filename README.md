@@ -37,12 +37,14 @@ either [globally](/svelte.config.js) or
 [per-component](https://svelte.dev/docs#template-syntax-svelte-options);
 otherwise mutable values work fine in
 [`writable`](https://svelte.dev/docs#run-time-svelte-store-writable) stores.
-In other words, you shouldn't use this library unless you're also enabling
+In other words, you should not use this library unless you're also enabling
 [`immutable`](https://svelte.dev/docs#compile-time-svelte-compile)
-because of the performance and ergonomic downsides.
+because of the ergonomic and performance downsides.
 
-> view this example in
-> [a REPL on svelte.dev](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe?version=3.46.2)
+This library's API is intentionally different from `writable`
+so it stands out, highlighting its incompatible semantics.
+
+> [view this example in a REPL on svelte.dev](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe?version=3.46.2)
 
 ```svelte
 <svelte:options immutable />
