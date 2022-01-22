@@ -11,6 +11,14 @@ npm:
 deployed:
 [feltcoop.github.io/svelte-mutable-store](https://feltcoop.github.io/svelte-mutable-store)
 
+## todo
+
+- finalize API for 1.0 (do help if you like!)
+- write automated tests (the demos cover the full behavior, but automated checks are good too)
+- write the motivation section using the experimental one as the base:
+  [spiderspace/mutable](https://github.com/spiderspace/mutable)
+- maybe make a video intro
+
 ## motivation
 
 TODO -- for now, see [spiderspace/mutable](https://github.com/spiderspace/mutable)

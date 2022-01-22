@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '@feltcoop/felt/ui/style.css';
+	import 'prismjs/themes/prism.min.css';
 	import {base} from '$app/paths';
 
 	import '$lib/style.css';
