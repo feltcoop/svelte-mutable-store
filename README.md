@@ -20,7 +20,8 @@ TODO -- for now, see [spiderspace/mutable](https://github.com/spiderspace/mutabl
 npm i @feltcoop/svelte-mutable-store
 ```
 
-Enable `immutable` either [globally](/svelte.config.js) or per-component;
+Enable `immutable` either [globally](/svelte.config.js) or
+[per-component](https://svelte.dev/docs#template-syntax-svelte-options);
 otherwise mutable values work fine in `writable` stores:
 
 > view this example in
