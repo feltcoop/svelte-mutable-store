@@ -13,7 +13,7 @@ deployed:
 
 ## todo
 
-- finalize API for 1.0 (do help if you like!)
+- finalize API for 1.0 (help wanted!)
 - write automated tests (the demos cover the full behavior, but automated checks are good too)
 - write the motivation section using the experimental one as the base:
   [spiderspace/mutable](https://github.com/spiderspace/mutable)
