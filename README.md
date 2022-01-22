@@ -1,4 +1,4 @@
-# [`@feltcoop/svelte-mutable-store`](https://www.npmjs.com/package/@feltcoop/svelte-mutable-store)
+# @feltcoop/svelte-mutable-store
 
 > [Svelte](https://svelte.dev) stores for mutable values with the
 > [`immutable`](https://svelte.dev/docs#compile-time-svelte-compile) compiler option
