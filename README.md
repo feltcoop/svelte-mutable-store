@@ -3,7 +3,7 @@
 > [Svelte](https://svelte.dev) stores for mutable values with the
 > [`immutable`](https://svelte.dev/docs#compile-time-svelte-compile) compiler option
 
-> status: **alpha**
+> status: **pre-1.0 alpha**
 
 npm:
 [`@feltcoop/svelte-mutable-store`](https://www.npmjs.com/package/@feltcoop/svelte-mutable-store)
