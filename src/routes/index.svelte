@@ -37,13 +37,13 @@
 				><code>mutable</code></a
 			>
 			(<small>count:</small>
-			{$a.value.get(someObj)}) and<br />
+			<strong>{$a.value.get(someObj)}</strong>) and<br />
 			<a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/safeMutable.ts"
 				><code>safeMutable</code></a
 			>
 			(<small>count:</small>
-			{$b.value.get(someObj)}) <br /> both react to changes even though their values are mutated and
-			the
+			<strong>{$b.value.get(someObj)}</strong>) <br /> both react to changes even though their
+			values are mutated and the
 			<a href="https://svelte.dev/docs#compile-time-svelte-compile"><code>immutable</code></a>
 			option is enabled
 		</p>
@@ -51,7 +51,8 @@
 			their
 			<a href="https://svelte.dev/docs#run-time-svelte-store-writable"><code>writable</code></a>
 			counterpart (<small>count:</small>
-			{$c.get(someObj)}) <br />does not update because it mutates its value, but it will update if
+			<strong>{$c.get(someObj)}</strong>) <br />does not update because it mutates its value, but it
+			will update if
 			<a href="https://svelte.dev/docs#compile-time-svelte-compile"><code>immutable</code></a> is disabled
 		</p>
 		<p class="buttons">
