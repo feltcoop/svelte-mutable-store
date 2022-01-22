@@ -133,7 +133,7 @@ gro deploy
 
 ## publish
 
-Publish to npm:
+[Publish](https://github.com/feltcoop/gro/blob/main/src/docs/publish.md) to npm:
 
 ```bash
 npm run npm-publish patch|minor|major|etc
@@ -158,6 +158,6 @@ gro publish patch|minor|major|etc
 
 public domain ⚘ [The Unlicense](license)
 
-Feel free to copypaste and modify this code wherever you wish;
+Feel free to copypaste and modify this code however you wish;
 there's no need to drag a license file around with it.
 Attribution is appreciated but you do you.
