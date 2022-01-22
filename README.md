@@ -150,7 +150,7 @@ gro publish patch|minor|major|etc
 [Gro](https://github.com/feltcoop/gro)
 & [more](package.json)
 
-## [🐦](https://wikipedia.org/wiki/Free_and_open-source_software)
+## license [🐦](https://wikipedia.org/wiki/Free_and_open-source_software)
 
 public domain ⚘ [The Unlicense](license)
 
