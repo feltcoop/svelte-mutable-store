@@ -1,6 +1,7 @@
 # [`@feltcoop/svelte-mutable-store`](https://www.npmjs.com/package/@feltcoop/svelte-mutable-store)
 
-> [Svelte](https://svelte.dev) stores for mutable values with the immutable compiler option
+> [Svelte](https://svelte.dev) stores for mutable values with the
+> [`immutable`](https://svelte.dev/docs#compile-time-svelte-compile) compiler option
 
 > status: **alpha**
 
@@ -20,10 +21,12 @@ TODO -- for now, see [spiderspace/mutable](https://github.com/spiderspace/mutabl
 npm i @feltcoop/svelte-mutable-store
 ```
 
-Enable `immutable` either [globally](/svelte.config.js) or
+Enable [`immutable`](https://svelte.dev/docs#compile-time-svelte-compile)
+either [globally](/svelte.config.js) or
 [per-component](https://svelte.dev/docs#template-syntax-svelte-options);
 otherwise mutable values work fine in `writable` stores.
-In other words, you shouldn't use this library unless you're also enabling `immutable`
+In other words, you shouldn't use this library unless you're also enabling
+[`immutable`](https://svelte.dev/docs#compile-time-svelte-compile)
 because of the minor performance and ergonomic tradeoffs.
 
 > view this example in
