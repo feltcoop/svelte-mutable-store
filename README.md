@@ -11,6 +11,8 @@ npm:
 deployed:
 [feltcoop.github.io/svelte-mutable-store](https://feltcoop.github.io/svelte-mutable-store)
 
+repl: [minimal example](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe?version=3.46.2)
+
 ## todo
 
 - finalize API for 1.0 (help wanted!)
