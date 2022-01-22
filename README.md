@@ -37,8 +37,11 @@ otherwise mutable values work fine in `writable stores:
 
 	const someObj = {};
 	const data = [[someObj, 1]];
-	const a = mutable(new WeakMap(data)); // the more efficient option; swaps between 2 stable objects refs
-	const b = safeMutable(new WeakMap(data)); // generates a new reference on every mutation
+	// `mutable` is the more efficient option; swaps between 2 stable objects refs
+	const a = mutable(new WeakMap(data));
+	// `safeMutable` is slightly less efficient; generates a new reference on every mutation
+	const b = safeMutable(new WeakMap(data));
+	// `writable` doesn't work in this case with `immutable` enabled
 	const c = writable(new WeakMap(data));
 
 	const increment = () => {
