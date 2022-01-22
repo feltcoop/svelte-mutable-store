@@ -16,18 +16,20 @@ deployed:
 - finalize API for 1.0 (help wanted!)
 - write automated tests ([the website demo](https://feltcoop.github.io/svelte-mutable-store)
   covers the full behavior, but automated checks are good too)
-- write the motivation section using the experimental one as the base:
+- write the motivation/intro readme section using the experimental one as the base:
   [spiderspace/mutable](https://github.com/spiderspace/mutable)
+- write the API readme section
 - maybe make a video intro
 
 ## motivation
 
 TODO -- for now, see [spiderspace/mutable](https://github.com/spiderspace/mutable)
+and [feltcoop.github.io/svelte-mutable-store](https://feltcoop.github.io/svelte-mutable-store)
 
 ## usage
 
 ```bash
-npm i @feltcoop/svelte-mutable-store
+npm i -D @feltcoop/svelte-mutable-store
 ```
 
 Enable [`immutable`](https://svelte.dev/docs#compile-time-svelte-compile)
@@ -37,7 +39,7 @@ otherwise mutable values work fine in
 [`writable`](https://svelte.dev/docs#run-time-svelte-store-writable) stores.
 In other words, you shouldn't use this library unless you're also enabling
 [`immutable`](https://svelte.dev/docs#compile-time-svelte-compile)
-because of the minor performance and ergonomic tradeoffs.
+because of the performance and ergonomic downsides.
 
 > view this example in
 > [a REPL on svelte.dev](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe?version=3.46.2)
@@ -151,3 +153,7 @@ gro publish patch|minor|major|etc
 ## [🐦](https://wikipedia.org/wiki/Free_and_open-source_software)
 
 public domain ⚘ [The Unlicense](license)
+
+Feel free to copypaste and modify this code wherever you wish,
+there's no need to drag a license file around with you.
+Attribution is appreciated but you do you.
