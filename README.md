@@ -14,7 +14,8 @@ deployed:
 ## todo
 
 - finalize API for 1.0 (help wanted!)
-- write automated tests (the demos cover the full behavior, but automated checks are good too)
+- write automated tests ([the website demo](https://feltcoop.github.io/svelte-mutable-store)
+  covers the full behavior, but automated checks are good too)
 - write the motivation section using the experimental one as the base:
   [spiderspace/mutable](https://github.com/spiderspace/mutable)
 - maybe make a video intro
