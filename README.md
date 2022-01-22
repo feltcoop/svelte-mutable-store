@@ -1,8 +1,11 @@
-# `@feltcoop/svelte-mutable-store`
+# [`@feltcoop/svelte-mutable-store`](https://www.npmjs.com/package/@feltcoop/svelte-mutable-store)
 
 > [Svelte](https://svelte.dev) stores for mutable values with the immutable compiler option
 
-> status: **work in progress**
+> status: **alpha**
+
+npm:
+[`@feltcoop/svelte-mutable-store`](https://www.npmjs.com/package/@feltcoop/svelte-mutable-store)
 
 deployed:
 [feltcoop.github.io/svelte-mutable-store](https://feltcoop.github.io/svelte-mutable-store)
