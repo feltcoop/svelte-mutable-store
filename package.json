@@ -20,7 +20,7 @@
     "build": "gro build",
     "test": "gro test",
     "deploy": "gro deploy",
-    "publish": "gro publish"
+    "npm-publish": "gro publish"
   },
   "devDependencies": {
     "@feltcoop/felt": "^0.17.0",
