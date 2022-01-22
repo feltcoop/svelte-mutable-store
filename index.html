@@ -7,17 +7,18 @@
 
 		
 
-		<link rel="modulepreload" href="/svelte-mutable-store/_app/start-32c72d2e.js">
-		<link rel="modulepreload" href="/svelte-mutable-store/_app/chunks/vendor-5a5860ad.js">
+		<link rel="modulepreload" href="/svelte-mutable-store/_app/start-a9270869.js">
+		<link rel="modulepreload" href="/svelte-mutable-store/_app/chunks/vendor-c5ea6b8b.js">
 		<link rel="modulepreload" href="/svelte-mutable-store/_app/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/svelte-mutable-store/_app/pages/__layout.svelte-57ba3ffe.js">
-		<link rel="modulepreload" href="/svelte-mutable-store/_app/pages/index.svelte-b9c655b6.js">
+		<link rel="modulepreload" href="/svelte-mutable-store/_app/pages/__layout.svelte-855c8fff.js">
+		<link rel="modulepreload" href="/svelte-mutable-store/_app/pages/index.svelte-4c13d925.js">
 		<link rel="stylesheet" href="/svelte-mutable-store/_app/assets/start-61d1577b.css">
-		<link rel="stylesheet" href="/svelte-mutable-store/_app/assets/pages/__layout.svelte-36eea021.css">
-		<link rel="stylesheet" href="/svelte-mutable-store/_app/assets/pages/index.svelte-ce5a92e0.css">
+		<link rel="stylesheet" href="/svelte-mutable-store/_app/assets/vendor-e3cf7933.css">
+		<link rel="stylesheet" href="/svelte-mutable-store/_app/assets/pages/__layout.svelte-2dfb2540.css">
+		<link rel="stylesheet" href="/svelte-mutable-store/_app/assets/pages/index.svelte-cc196b3e.css">
 
 		<script type="module">
-			import { start } from "/svelte-mutable-store/_app/start-32c72d2e.js";
+			import { start } from "/svelte-mutable-store/_app/start-a9270869.js";
 			start({
 				target: document.body,
 				paths: {"base":"/svelte-mutable-store","assets":""},
@@ -30,8 +31,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/svelte-mutable-store/_app/pages/__layout.svelte-57ba3ffe.js"),
-						import("/svelte-mutable-store/_app/pages/index.svelte-b9c655b6.js")
+						import("/svelte-mutable-store/_app/pages/__layout.svelte-855c8fff.js"),
+						import("/svelte-mutable-store/_app/pages/index.svelte-4c13d925.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -49,30 +50,112 @@
 
 
 
+<main class="markup column svelte-w0k95e"><header><h1 class="svelte-w0k95e">@feltcoop/svelte-mutable-store</h1>
+		<section class="markup"><p><a href="https://svelte.dev">Svelte</a> stores for mutable values with the
+				<a href="https://svelte.dev/docs#compile-time-svelte-compile"><code>immutable</code></a>
+				compiler option —
+				<a href="https://github.com/feltcoop/svelte-mutable-store">learn more on GitHub</a></p>
+			<pre class="panel-inset svelte-w0k95e">npm i -D <a href="https://www.npmjs.com/package/@feltcoop/svelte-mutable-store">@feltcoop/svelte-mutable-store</a></pre></section></header>
 
+	<button class="svelte-w0k95e">click me to make number++ go up
+	</button>
 
+	<h2 class="svelte-w0k95e">A. <code>writable</code> store (broken! D:)
+	</h2>
+	<section style="--hue: 37;"><pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START --><span class="token keyword">const</span> writableMap <span class="token operator">=</span> <span class="token function">writable</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><!-- HTML_TAG_END --></pre>
+		<div class="count-with-label svelte-w0k95e"><p class="count-wrapper panel-outset svelte-w0k95e"><span class="count svelte-w0k95e">1</span>
+				<span class="read-example svelte-w0k95e"><!-- HTML_TAG_START -->$writableMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><!-- HTML_TAG_END --></span></p>
+			<p class="count-label svelte-w0k95e">Fails to update as a <code>writable</code> store because <code>immutable</code> is enabled and
+				we&#39;re mutating the map.
+			</p></div>
+		<pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START -->$writableMap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> $writableMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$writableMap <span class="token operator">=</span> $writableMap<span class="token punctuation">;</span><!-- HTML_TAG_END --></pre></section>
 
-<main class="column markup svelte-19vgrwu"><h1 class="svelte-19vgrwu">@feltcoop/svelte-mutable-store</h1>
-	<section class="column-sm"><p><a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/mutable.ts"><code>mutable</code></a>
-			(<small>count:</small>
-			<strong>1</strong>) and<br>
-			<a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/safeMutable.ts"><code>safeMutable</code></a>
-			(<small>count:</small>
-			<strong>1</strong>) <br> both react to changes even though their
-			values are mutated and the
-			<a href="https://svelte.dev/docs#compile-time-svelte-compile"><code>immutable</code></a>
-			option is enabled
-		</p>
-		<p>their
-			<a href="https://svelte.dev/docs#run-time-svelte-store-writable"><code>writable</code></a>
-			counterpart (<small>count:</small>
-			<strong>1</strong>) <br>does not update because it mutates its value, but it
-			will update if
-			<a href="https://svelte.dev/docs#compile-time-svelte-compile"><code>immutable</code></a> is disabled
-		</p>
-		<p class="buttons svelte-19vgrwu"><button>click me to increment</button>
-			<button>reset</button></p></section>
-	<footer class="markup svelte-19vgrwu"><p><a href="https://github.com/feltcoop/svelte-mutable-store">learn more and get the source code on GitHub</a></p></footer>
+	<h2 class="svelte-w0k95e">B. <code>writable</code> store with cloning
+	</h2>
+	<section style="--hue: 37;"><pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START --><span class="token keyword">const</span> writableMapCloned <span class="token operator">=</span> <span class="token function">writable</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><!-- HTML_TAG_END --></pre>
+		<div class="count-with-label svelte-w0k95e"><p class="count-wrapper panel-outset svelte-w0k95e"><span class="count svelte-w0k95e">1</span>
+				<span class="read-example svelte-w0k95e"><!-- HTML_TAG_START -->$writableMapCloned<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><!-- HTML_TAG_END --></span></p>
+			<p class="count-label svelte-w0k95e">Works for <code>Map</code>, but in some cases, causes tremendous garbage and slowness; also,
+				it does not work for
+				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap"><code>WeakMap</code></a>, one of the motivating usecases for this library.
+			</p></div>
+		<pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START -->$writableMapCloned<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> $writableMapCloned<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$writableMapCloned <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span>$writableMapCloned<span class="token punctuation">)</span><span class="token punctuation">;</span><!-- HTML_TAG_END --></pre></section>
+
+	<section class="message svelte-w0k95e"><div class="message panel-inset svelte-q9utf0" style="--color: var(--text_color_light)"><span class="icon svelte-q9utf0">✨</span>
+		<div>in the examples below, notice that you need to access <code>.value</code> for reads, unlike above
+			</div></div></section>
+
+	<h2 class="svelte-w0k95e">C. <code>derived</code> from <code>writable</code> store
+	</h2>
+	<section style="--hue: 37;"><pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START --><span class="token keyword">const</span> derivedWritableMap <span class="token operator">=</span> <span class="token function">derived</span><span class="token punctuation">(</span>writableMap<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">$v</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">value</span><span class="token operator">:</span> $v<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><!-- HTML_TAG_END --></pre>
+		<div class="count-with-label svelte-w0k95e"><p class="count-wrapper panel-outset svelte-w0k95e"><span class="count svelte-w0k95e">1</span>
+				<span class="read-example svelte-w0k95e"><!-- HTML_TAG_START -->$derivedWritableMap<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><!-- HTML_TAG_END --></span></p>
+			<p class="count-label svelte-w0k95e">Works with no new modules, and doesn&#39;t clone the map, but now we&#39;re juggling two stores, one
+				for writes and one for reads; this is also error-prone because reading the <code>writable</code> isn&#39;t reactive!
+			</p></div>
+		<pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START -->$writableMap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> $writableMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$writableMap <span class="token operator">=</span> $writableMap<span class="token punctuation">;</span><!-- HTML_TAG_END --></pre></section>
+
+	<h2 class="svelte-w0k95e">D. <code><a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/mutable.ts">mutable</a></code> store
+	</h2>
+	<section style="--hue: 37;"><pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START --><span class="token keyword">const</span> mutableMap <span class="token operator">=</span> <span class="token function">mutable</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><!-- HTML_TAG_END --></pre>
+		<div class="count-with-label svelte-w0k95e"><p class="count-wrapper panel-outset svelte-w0k95e"><span class="count svelte-w0k95e">1</span>
+				<span class="read-example svelte-w0k95e"><!-- HTML_TAG_START -->$mutableMap<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><!-- HTML_TAG_END --></span></p>
+			<p class="count-label svelte-w0k95e">Works because it&#39;s a <code><a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/mutable.ts">mutable</a></code>
+				store. Doesn&#39;t clone the map, but notice that you need to access <code>.value</code> on reads.
+			</p></div>
+		<pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START -->mutableMap<span class="token punctuation">.</span><span class="token function">mutate</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">$v</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+	$v<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> $v<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><!-- HTML_TAG_END --></pre></section>
+
+	<h2 class="svelte-w0k95e">E. <code><a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/safeMutable.ts">safeMutable</a></code> store
+	</h2>
+	<section style="--hue: 37;"><pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START --><span class="token keyword">const</span> safeMutableMap <span class="token operator">=</span> <span class="token function">safeMutable</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><!-- HTML_TAG_END --></pre>
+		<div class="count-with-label svelte-w0k95e"><p class="count-wrapper panel-outset svelte-w0k95e"><span class="count svelte-w0k95e">1</span>
+				<span class="read-example svelte-w0k95e"><!-- HTML_TAG_START -->$safeMutableMap<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><!-- HTML_TAG_END --></span></p>
+			<p class="count-label svelte-w0k95e">Works because it&#39;s a <code><a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/safeMutable.ts">safeMutable</a></code>
+				store, which compared to
+				<code><a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/mutable.ts">mutable</a></code>
+				is slightly less efficient because it creates a new reference on every change, unlike the regular
+				<code>mutable</code>
+				which swaps between two stable object references; <code>safeMutable</code> composes better as
+				an immutable value stream, but given that you&#39;re expected to mutate the store value, this is
+				probably useful only in rare cases.
+			</p></div>
+		<pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START -->safeMutableMap<span class="token punctuation">.</span><span class="token function">mutate</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">$v</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+	$v<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> $v<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><!-- HTML_TAG_END --></pre></section>
+
+	<h2 class="svelte-w0k95e">F. <code><a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/mutable.ts">mutable</a></code> store with manual update
+	</h2>
+	<pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START --><span class="token keyword">const</span> mutableMapManual <span class="token operator">=</span> <span class="token function">mutable</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><!-- HTML_TAG_END --></pre>
+	<section style="--hue: 37;"><div class="count-with-label svelte-w0k95e"><p class="count-wrapper panel-outset svelte-w0k95e"><span class="count svelte-w0k95e">1</span>
+				<span class="read-example svelte-w0k95e"><!-- HTML_TAG_START -->$mutableMapManual<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><!-- HTML_TAG_END --></span></p>
+			<p class="count-label svelte-w0k95e">Works because it&#39;s a <code><a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/mutable.ts">mutable</a></code>
+				store, but mutates the value directly and then manually calls <code>.mutate()</code> with no
+				args, which may reduce readability with action-at-a-distance but is sometimes useful.
+			</p></div>
+		<pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START -->$mutableMapManual<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> $mutableMapManual<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+mutableMapManual<span class="token punctuation">.</span><span class="token function">mutate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><!-- HTML_TAG_END --></pre></section>
+
+	<h2 class="svelte-w0k95e">G. <code><a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/mutable.ts">mutable</a></code> store with swapped value references
+	</h2>
+	<section style="--hue: 37;"><pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START --><span class="token keyword">const</span> mutableMapSwap <span class="token operator">=</span> <span class="token function">mutable</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><!-- HTML_TAG_END --></pre>
+		<div class="count-with-label svelte-w0k95e"><p class="count-wrapper panel-outset svelte-w0k95e"><span class="count svelte-w0k95e">1</span>
+				<span class="read-example svelte-w0k95e"><!-- HTML_TAG_START -->$mutableMapSwap<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><!-- HTML_TAG_END --></span></p>
+			<p class="count-label svelte-w0k95e">You can swap a <code>mutable</code> store reference in the rare cases that&#39;s useful. If this
+				is the only way you&#39;re using <code>mutable</code> and the values are used immutably, use a
+				<code>writable</code>
+				instead, because the <code>mutable</code> store has ergonomic and performance downsides.
+			</p></div>
+		<pre class="panel-inset svelte-w0k95e"><!-- HTML_TAG_START --><span class="token keyword">const</span> nextRef <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span>$mutableMapSwap<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+nextRef<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> nextRef<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+mutableMapSwap<span class="token punctuation">.</span><span class="token function">swap</span><span class="token punctuation">(</span>nextRef<span class="token punctuation">)</span><span class="token punctuation">;</span><!-- HTML_TAG_END --></pre></section>
+
+	<hr>
+	<footer class="markup svelte-w0k95e"><p><a href="https://github.com/feltcoop/svelte-mutable-store">get the docs and public domain source code on GitHub</a></p></footer>
 </main>
 
 
