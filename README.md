@@ -1,19 +1,64 @@
-# felt-template
+# `@feltcoop/svelte-mutable-store`
 
-> a web app template with [SvelteKit](https://github.com/sveltejs/kit),
-> [Felt](https://github.com/feltcoop/felt), and [Gro](https://github.com/feltcoop/gro)
+> [Svelte](https://svelte.dev) stores for mutable values with the immutable compiler option
+
+> status: **work in progress**
 
 deployed:
-[feltcoop.github.io/felt-template](https://feltcoop.github.io/felt-template)
+[feltcoop.github.io/svelte-mutable-store](https://feltcoop.github.io/svelte-mutable-store)
+
+## motivation
+
+TODO -- for now, see [spiderspace/mutable](https://github.com/spiderspace/mutable)
 
 ## usage
 
-If you're logged into GitHub, click "Use this template" above or clone with
-[`degit`](https://github.com/Rich-Harris/degit):
+```bash
+npm i @feltcoop/svelte-mutable-store
+```
+
+Enable `immutable` either [globally](/svelte.config.js) or per-component;
+otherwise mutable values work fine in `writable stores:
+
+> TODO REPL link
+
+```svelte
+<svelte:options immutable />
+
+<script>
+	import {mutable, safeMutable} from '@feltcoop/svelte-mutable-store';
+	import {writable} from 'svelte/store';
+
+	const someObj = {};
+	const data = [[someObj, 1]];
+	const a = mutable(new WeakMap(data)); // the more efficient option; swaps between 2 stable objects refs
+	const b = safeMutable(new WeakMap(data)); // generates a new reference on every mutation
+	const c = writable(new WeakMap(data));
+
+	const increment = () => {
+		a.mutate(($a) => {
+			$a.set(someObj, $a.get(someObj) + 1);
+		});
+		b.mutate(($b) => {
+			$b.set(someObj, $b.get(someObj) + 1);
+		});
+		$c.set(someObj, $c.get(someObj) + 1);
+		$c = $c;
+	};
+</script>
+
+mutable (count: {$a.value.get(someObj)}) and safeMutable (count: {$b.value.get(someObj)}) both react
+to changes even though their values are mutated and the immutable option is enabled, but the
+writable does not (count: {$c.get(someObj)})
+```
+
+## api
+
+TODO
+
+## develop
 
 ```bash
-npx degit feltcoop/felt-template cooltoy
-cd cooltoy
 npm i
 # then
 npm run dev
@@ -21,28 +66,9 @@ npm run dev
 gro dev # npm i -g @feltcoop/gro
 ```
 
-> learn more about [Gro](https://github.com/feltcoop/gro)
-
-The template includes
-[`@sveltejs/adapter-static`](https://github.com/sveltejs/kit/tree/master/packages/adapter-static)
-so it can deploy with no further configuration.
-To learn how to swap it out for another deployment target, see
-[the SvelteKit adapter docs](https://kit.svelte.dev/docs#adapters).
-
-To make it your own, change `felt-template` to your project name in the following files:
-
-- [`package.json`](package.json)
-- [`svelte.config.js`](svelte.config.js)
-- [`src/routes/__layout.svelte`](src/routes/__layout.svelte)
-- [`src/routes/index.svelte`](src/routes/index.svelte)
-
-Then run `npm i` to update `package-lock.json`.
-
-Optionally add a [license file](https://choosealicense.com/)
-and [`package.json` value](https://spdx.org/licenses/), like `"license": "MIT"`.
-
-See [SvelteKit](https://github.com/sveltejs/kit)
-and [Vite](https://github.com/vitejs/vite) for more.
+> learn more about [SvelteKit](https://github.com/sveltejs/kit),
+> [Vite](https://github.com/vitejs/vite),
+> and [Gro](https://github.com/feltcoop/gro)
 
 ## build
 
@@ -63,6 +89,16 @@ npm run deploy
 gro deploy
 ```
 
+## publish
+
+Publish to npm:
+
+```bash
+npm run publish -- patch|minor|major|etc
+# or
+gro publish patch|minor|major|etc
+```
+
 ## credits 🐢<sub>🐢</sub><sub><sub>🐢</sub></sub>
 
 [Svelte](https://github.com/sveltejs/svelte) ∙
@@ -77,3 +113,5 @@ gro deploy
 & [more](package.json)
 
 ## [🐦](https://wikipedia.org/wiki/Free_and_open-source_software)
+
+public domain ⚘ [The Unlicense](license)

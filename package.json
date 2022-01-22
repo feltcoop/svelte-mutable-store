@@ -1,7 +1,8 @@
 {
-  "name": "felt-template",
-  "description": "a web app template with SvelteKit, Gro, and Felt",
-  "version": "0.0.1",
+  "name": "@feltcoop/svelte-mutable-store",
+  "description": "Svelte stores for mutable values with the immutable compiler option",
+  "version": "0.1.0",
+  "license": "Unlicense",
   "type": "module",
   "engines": {
     "node": ">= 16.6"
