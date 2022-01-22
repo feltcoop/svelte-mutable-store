@@ -3,6 +3,11 @@
   "description": "Svelte stores for mutable values with the immutable compiler option",
   "version": "0.1.0",
   "license": "Unlicense",
+  "author": {
+    "name": "Felt.coop",
+    "email": "team@felt.social",
+    "url": "https://felt.social"
+  },
   "type": "module",
   "engines": {
     "node": ">= 16.6"
