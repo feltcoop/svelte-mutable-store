@@ -132,7 +132,7 @@ gro deploy
 Publish to npm:
 
 ```bash
-npm run publish -- patch|minor|major|etc
+npm run publish patch|minor|major|etc
 # or
 gro publish patch|minor|major|etc
 ```
