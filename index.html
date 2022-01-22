@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>felt-template</title><link rel="icon" href="/felt-template/favicon.png" data-svelte="svelte-evqxas">
+
+		
+
+		<link rel="modulepreload" href="/felt-template/_app/start-d2ef5292.js">
+		<link rel="modulepreload" href="/felt-template/_app/chunks/vendor-5a5860ad.js">
+		<link rel="modulepreload" href="/felt-template/_app/chunks/paths-28a87002.js">
+		<link rel="modulepreload" href="/felt-template/_app/pages/__layout.svelte-771322fd.js">
+		<link rel="modulepreload" href="/felt-template/_app/pages/index.svelte-dea0b898.js">
+		<link rel="stylesheet" href="/felt-template/_app/assets/start-61d1577b.css">
+		<link rel="stylesheet" href="/felt-template/_app/assets/pages/__layout.svelte-36eea021.css">
+		<link rel="stylesheet" href="/felt-template/_app/assets/pages/index.svelte-ce5a92e0.css">
+
+		<script type="module">
+			import { start } from "/felt-template/_app/start-d2ef5292.js";
+			start({
+				target: document.body,
+				paths: {"base":"/felt-template","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/felt-template/_app/pages/__layout.svelte-771322fd.js"),
+						import("/felt-template/_app/pages/index.svelte-dea0b898.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002F",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		
+
+
+
+
+
+
+
+<main class="column markup svelte-19vgrwu"><h1 class="svelte-19vgrwu">@feltcoop/svelte-mutable-store</h1>
+	<section class="column-sm"><p><a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/mutable.ts"><code>mutable</code></a>
+			(<small>count:</small>
+			1) and<br>
+			<a href="https://github.com/feltcoop/svelte-mutable-store/blob/main/src/lib/safeMutable.ts"><code>safeMutable</code></a>
+			(<small>count:</small>
+			1) <br> both react to changes even though their values are mutated and
+			the
+			<a href="https://svelte.dev/docs#compile-time-svelte-compile"><code>immutable</code></a>
+			option is enabled
+		</p>
+		<p>their
+			<a href="https://svelte.dev/docs#run-time-svelte-store-writable"><code>writable</code></a>
+			counterpart (<small>count:</small>
+			1) <br>does not update because it mutates its value, but it will update if
+			<a href="https://svelte.dev/docs#compile-time-svelte-compile"><code>immutable</code></a> is disabled
+		</p>
+		<p class="buttons svelte-19vgrwu"><button>click me to increment</button>
+			<button>reset</button></p></section>
+	<footer class="markup svelte-19vgrwu"><p><a href="https://github.com/feltcoop/svelte-mutable-store">learn more and get the source code on GitHub</a></p></footer>
+</main>
+
+
+	</body>
+</html>
