@@ -22,7 +22,9 @@ npm i @feltcoop/svelte-mutable-store
 
 Enable `immutable` either [globally](/svelte.config.js) or
 [per-component](https://svelte.dev/docs#template-syntax-svelte-options);
-otherwise mutable values work fine in `writable` stores:
+otherwise mutable values work fine in `writable` stores.
+In other words, you shouldn't use this library unless you're also enabling `immutable`
+because of the minor performance and ergonomic tradeoffs.
 
 > view this example in
 > [a REPL on svelte.dev](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe?version=3.46.2)
