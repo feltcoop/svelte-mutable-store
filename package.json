@@ -1,8 +1,8 @@
 {
   "name": "@feltcoop/svelte-mutable-store",
   "description": "Svelte stores for mutable values with the immutable compiler option",
-  "version": "0.1.0",
-  "license": "Unlicense",
+  "version": "0.1.1",
+  "license": "CC0-1.0",
   "homepage": "https://feltcoop.github.io/svelte-mutable-store",
   "repository": "github:feltcoop/svelte-mutable-store",
   "author": {
@@ -19,7 +19,8 @@
     "dev": "gro dev",
     "build": "gro build",
     "test": "gro test",
-    "deploy": "gro deploy"
+    "deploy": "gro deploy",
+    "npm-publish": "gro publish"
   },
   "devDependencies": {
     "@feltcoop/felt": "^0.17.0",
