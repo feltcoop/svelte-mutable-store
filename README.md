@@ -17,8 +17,8 @@ minimal example: [repl](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe
 
 - finalize API for 1.0 (help wanted!)
 - write automated tests ([the website demo](https://feltcoop.github.io/svelte-mutable-store)
-  covers the full behavior, but automated checks are good too)
-- write the motivation/intro readme section using the experimental one as the base:
+  covers all behavior, but automated tests are good & make good docs)
+- write the motivation/intro readme section based on the original prototype:
   [spiderspace/mutable](https://github.com/spiderspace/mutable)
 - write the API readme section
 - maybe make a video intro
