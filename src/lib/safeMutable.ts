@@ -1,10 +1,6 @@
-import {writable, type Readable} from 'svelte/store';
+import {writable} from 'svelte/store';
 
-export interface Mutable<T> {
-	subscribe: Readable<{value: T}>['subscribe'];
-	mutate(mutator?: (value: T) => void): void;
-	swap(value: T): void; // typical usage is mutating the value with `mutate`; this updates the ref
-}
+import type {Mutable} from './mutable';
 
 /**
  * Creates a store wrapping a mutable `value`.
