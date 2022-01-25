@@ -77,7 +77,7 @@ so it stands out, highlighting its incompatible semantics.
 	const reset = () => {
 		a.swap(new WeakMap(data));
 		b.swap(new WeakMap(data));
-		c.set(new WeakMap(data));
+		$c = new WeakMap(data); // aka `c.set(new WeakMap(data))`
 	};
 </script>
 
