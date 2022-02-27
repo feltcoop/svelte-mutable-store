@@ -86,8 +86,8 @@ so it stands out, highlighting its incompatible semantics.
 	and safeMutable (count: {$b.value.get(someObj)})
 	both react to changes even though their values are mutated
 	and the immutable option is enabled,
-	but the writable does not unless you disable the immutable option
-	at the top of the page (count: {$c.get(someObj)})
+	but the writable (count: {$c.get(someObj)})
+	does not unless you disable the immutable option at the top of the page
 </pre>
 
 <button on:click={increment}>increment</button>
