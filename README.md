@@ -45,6 +45,7 @@ because of the ergonomic and performance downsides.
 
 This library's API is intentionally different from `writable`
 so it stands out, highlighting its incompatible semantics.
+Maybe that's not best?
 
 > [view this example in a REPL on svelte.dev](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe?version=3.46.2)
 
