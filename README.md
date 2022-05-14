@@ -28,7 +28,7 @@ By enabling `immutable`, the developer is telling the compiler,
 "I won't mutate things, so knowing that, please avoid as much wasted work as you can",
 and it then detects value changes using simple referential equality.
 
-> for more info, see
+> for more on `immutable`, see
 > [this short writeup](https://github.com/spiderspace/mutable#more-about-immutable)
 > in the prototype that became this library
 
@@ -37,12 +37,12 @@ There are complex ergonomic and performance tradeoffs that
 depend on your personal preferences, code style, architecture, usecases,
 and the specifics of your runtime data.
 
-Instead, for developers who choose to enable `immutable`, this library offers a `mutable` store
+For developers who choose to enable `immutable`, this library offers a `mutable` store
 that allows mutation without breaking reactivity.
 Sometimes mutation is required, like with the unclonable
-[`WeakMap`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap),
-and other times it's desirable, like with large collections that are expensive to copy
-and APIs that mutate things outside of your control.
+[`WeakMap`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
+and APIs that mutate things outside of your control,
+and other times it's desirable, like with large collections that are expensive to copy.
 
 > for a demo of why this new store is needed,
 > see [the full](https://feltcoop.github.io/svelte-mutable-store) and
@@ -53,17 +53,17 @@ You may be wondering: why not use
 to opt in or out of immutability at the component level?
 
 - it adds mental overhead to ensure the option and usage stay in sync in each component
-- it's error prone because there's no compile-time help for detecting mistakes
+- it's error-prone because there's no compile-time help for detecting mistakes
 - it makes developers context-switch as they move around a codebase
   because components can behave in two different ways
-- the lack of granularity is less efficient, because it applies to the whole component,
-  not the specific values in question
+- the lack of granularity is less efficient because it applies to the whole component,
+  not specific values
 
 Some caveats:
 
 - when reading values in components, the actual value is `$store.value` not just `$store`
-- must pass store around as props and component-level vars,
-  not the inner `.value`, or else the compiler will see no changes
+- you must pass store around as props and component-level vars,
+  not the inner `.value`, so Svelte can detect changes
 - `mutable` swaps between two stable object references, which may cause issues in some cases,
   while `safeMutable` creates a new object reference on each change,
   which is safer but slightly less efficient
