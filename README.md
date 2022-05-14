@@ -22,8 +22,9 @@ minimal example: [repl](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe
 ## motivation
 
 The Svelte compiler has [an `immutable` option](https://svelte.dev/docs#compile-time-svelte-compile)
-that's disabled by default. When detecting value changes with `immutable` disabled,
-Svelte assumes all objects and functions are _not equal_ because they _could_ have been mutated.
+that's disabled by default.
+When detecting value changes, Svelte defaults to assuming
+all objects and functions are _not equal_ because they _could_ have been mutated.
 By enabling `immutable`, the developer is telling the compiler,
 "I won't mutate things, so knowing that, please avoid as much wasted work as you can",
 and it then detects value changes using simple referential equality.
@@ -76,8 +77,9 @@ npm i -D @feltcoop/svelte-mutable-store
 
 Enable [`immutable`](https://svelte.dev/docs#compile-time-svelte-compile)
 either [globally](/svelte.config.js) or
-[per-component](https://svelte.dev/docs#template-syntax-svelte-options);
-otherwise mutable values work fine in
+[per-component](https://svelte.dev/docs#template-syntax-svelte-options)
+(see [the motivation section](#motivation) for why the former is recommended over the latter).
+Otherwise mutable values work fine in
 [`writable`](https://svelte.dev/docs#run-time-svelte-store-writable) stores.
 In other words, you should not use this library unless you're also enabling
 [`immutable`](https://svelte.dev/docs#compile-time-svelte-compile)
