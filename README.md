@@ -67,7 +67,7 @@ instead of using a whole new store?
 Some caveats:
 
 - when reading values in components, the actual value is `$store.value` not just `$store`
-- you must pass store around as props and component-level vars,
+- you must pass the store around as props and component-level vars,
   not the inner `.value`, so Svelte can detect changes
 - `mutable` swaps between two stable object references, which may cause issues in some cases,
   while `safeMutable` creates a new object reference on each change,
