@@ -18,15 +18,58 @@ minimal example: [repl](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe
 - finalize API for 1.0 (help wanted!)
 - write automated tests ([the website demo](https://feltcoop.github.io/svelte-mutable-store)
   covers all behavior, but automated tests are good & make good docs)
-- write the motivation/intro readme section based on the original prototype:
-  [spiderspace/mutable](https://github.com/spiderspace/mutable)
 - write the API readme section
-- maybe make a video intro
+- video intro?
 
 ## motivation
 
-TODO -- for now, see [spiderspace/mutable](https://github.com/spiderspace/mutable)
-and [feltcoop.github.io/svelte-mutable-store](https://feltcoop.github.io/svelte-mutable-store)
+The Svelte compiler has [an `immutable` option](https://svelte.dev/docs#compile-time-svelte-compile)
+that's disabled by default. When detecting value changes with `immutable` disabled,
+Svelte assumes all objects and functions are *not equal* because they *could* have been mutated.
+By enabling `immutable`, the developer is telling the compiler,
+"I won't mutate things, so knowing that, please avoid as much wasted work as you can",
+and it then detects value changes using simple referential equality.
+
+> for more info, see
+> [this short writeup](https://github.com/spiderspace/mutable#more-about-immutable)
+> in the prototype that became this library
+
+This library currently offers no guidance on whether you *should* enable `immutable`.
+There are complex ergonomic and performance tradeoffs that
+depend on your personal preferences, code style, architecture, usecases,
+and the specifics of your runtime data.
+
+Instead, for developers who choose to enable `immutable`, this library offers a `mutable` store
+that allows mutation without breaking reactivity.
+Sometimes mutation is required, like with the unclonable
+[`WeakMap`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap),
+and other times it's desirable, like with large collections that are expensive to copy
+and APIs that mutate things outside of your control.
+
+> for a demo of why this new store is needed,
+> see [the full](https://feltcoop.github.io/svelte-mutable-store) and
+> [minimal REPL](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe?version=3.46.2) examples
+
+You may be wondering: why not use
+[`<svelte:options immutable={true|false} />`](https://svelte.dev/docs#template-syntax-svelte-options)
+to opt in or out of immutability at the component level?
+
+- it adds mental overhead to ensure the option and usage stay in sync in each component
+- it's error prone because there's no compile-time help for detecting mistakes
+- it makes developers context-switch as they move around a codebase
+	because components can behave in two different ways
+- the lack of granularity is less efficient, because it applies to the whole component,
+	not the specific values in question
+
+Some caveats:
+
+- when reading values in components, the actual value is `$store.value` not just `$store`
+- must pass store around as props and component-level vars,
+	not the inner `.value`, or else the compiler will see no changes
+- `mutable` swaps between two stable object references, which may cause issues in some cases,
+	while `safeMutable` creates a new object reference on each change,
+	which is safer but slightly less efficient
+
 
 ## usage
 
