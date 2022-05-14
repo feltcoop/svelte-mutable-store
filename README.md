@@ -51,9 +51,13 @@ and other times it's desirable, like with large collections that are expensive t
 
 You may be wondering: why not use
 [`<svelte:options immutable={true|false} />`](https://svelte.dev/docs#template-syntax-svelte-options)
-to opt in or out of immutability at the component level?
+to opt in or out of immutability at the component level when you want to mutate values,
+instead of using a whole new store?
 
-- it adds mental overhead to ensure the option and usage stay in sync in each component
+- it adds mental overhead to ensure the option and usage stay synced in each component;
+  this is especially challenging because store mutation
+  may be happening in a different module than the component,
+  so you can't reason about components in isolation
 - it's error-prone because there's no compile-time help for detecting mistakes
 - it makes developers context-switch as they move around a codebase
   because components can behave in two different ways
