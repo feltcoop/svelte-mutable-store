@@ -23,7 +23,7 @@ minimal example: [repl](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe
 
 The Svelte compiler has [an `immutable` option](https://svelte.dev/docs#compile-time-svelte-compile)
 that's disabled by default. When detecting value changes with `immutable` disabled,
-Svelte assumes all objects and functions are *not equal* because they *could* have been mutated.
+Svelte assumes all objects and functions are _not equal_ because they _could_ have been mutated.
 By enabling `immutable`, the developer is telling the compiler,
 "I won't mutate things, so knowing that, please avoid as much wasted work as you can",
 and it then detects value changes using simple referential equality.
@@ -32,7 +32,7 @@ and it then detects value changes using simple referential equality.
 > [this short writeup](https://github.com/spiderspace/mutable#more-about-immutable)
 > in the prototype that became this library
 
-This library currently offers no guidance on whether you *should* enable `immutable`.
+This library currently offers no guidance on whether you _should_ enable `immutable`.
 There are complex ergonomic and performance tradeoffs that
 depend on your personal preferences, code style, architecture, usecases,
 and the specifics of your runtime data.
@@ -55,19 +55,18 @@ to opt in or out of immutability at the component level?
 - it adds mental overhead to ensure the option and usage stay in sync in each component
 - it's error prone because there's no compile-time help for detecting mistakes
 - it makes developers context-switch as they move around a codebase
-	because components can behave in two different ways
+  because components can behave in two different ways
 - the lack of granularity is less efficient, because it applies to the whole component,
-	not the specific values in question
+  not the specific values in question
 
 Some caveats:
 
 - when reading values in components, the actual value is `$store.value` not just `$store`
 - must pass store around as props and component-level vars,
-	not the inner `.value`, or else the compiler will see no changes
+  not the inner `.value`, or else the compiler will see no changes
 - `mutable` swaps between two stable object references, which may cause issues in some cases,
-	while `safeMutable` creates a new object reference on each change,
-	which is safer but slightly less efficient
-
+  while `safeMutable` creates a new object reference on each change,
+  which is safer but slightly less efficient
 
 ## usage
 
