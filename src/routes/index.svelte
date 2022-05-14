@@ -298,7 +298,7 @@
 	<footer class="markup">
 		<p>
 			<a href="https://github.com/feltcoop/svelte-mutable-store"
-				>get the docs and public domain source code on GitHub</a
+				>source code and more docs on GitHub</a
 			>
 		</p>
 	</footer>
