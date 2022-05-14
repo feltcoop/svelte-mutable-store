@@ -1,4 +1,4 @@
-import {type Gen} from '@feltcoop/gro';
+import type {Gen} from '@feltcoop/gro';
 import Prism from 'prismjs';
 
 const data = {
