@@ -1,5 +1,5 @@
 import {typescript} from 'svelte-preprocess-esbuild';
-import static_adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-static';
 
 const dev = process.env.NODE_ENV !== 'production';
 
@@ -10,9 +10,10 @@ export default {
 		immutable: true,
 	},
 	kit: {
-		adapter: static_adapter(),
-		paths: dev ? undefined : {base: '/svelte-mutable-store'}, // for GitHub pages -- delete this line for top-level domains
+		adapter: adapter(),
+		paths: dev ? undefined : {base: '/svelte-mutable-store'},
 		files: {assets: 'src/static'},
+		prerender: {default: true},
 		vite: {
 			ssr: {
 				noExternal: ['@feltcoop/felt'],
