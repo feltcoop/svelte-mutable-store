@@ -3,13 +3,11 @@
 > [Svelte](https://svelte.dev) stores for mutable values with the
 > [`immutable`](https://svelte.dev/docs#compile-time-svelte-compile) compiler option
 
-npm:
-[`@feltcoop/svelte-mutable-store`](https://www.npmjs.com/package/@feltcoop/svelte-mutable-store)
-
-full example:
-[feltcoop.github.io/svelte-mutable-store](https://feltcoop.github.io/svelte-mutable-store)
-
-minimal example: [repl](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe?version=3.46.2)
+- npm:
+  [`@feltcoop/svelte-mutable-store`](https://www.npmjs.com/package/@feltcoop/svelte-mutable-store)
+- full example:
+  [feltcoop.github.io/svelte-mutable-store](https://feltcoop.github.io/svelte-mutable-store)
+- minimal example: [repl](https://svelte.dev/repl/08660ee9225a48aeb0cb5cb695715bbe?version=3.46.2)
 
 ## motivation
 
