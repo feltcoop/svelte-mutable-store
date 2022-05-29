@@ -19,7 +19,8 @@ When detecting value changes, Svelte defaults to assuming
 all objects and functions are _not equal_ because they _could_ have been mutated.
 By enabling `immutable`, the developer is telling the compiler,
 "I won't mutate things, so knowing that, please avoid as much wasted work as you can",
-and it then detects value changes using simple referential equality.
+and it then detects value changes using simple referential equality,
+cleaning up some of our dirty checking.
 
 > for more on `immutable`, see
 > [this short writeup](https://github.com/spiderspace/mutable#more-about-immutable)
